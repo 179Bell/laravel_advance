@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
-use App\Movies;
+use App\Movie;
 
 class MoviesController extends Controller
 {
@@ -42,8 +42,8 @@ class MoviesController extends Controller
     {
         $movies = Movie::find($id);
         
-        if(\Auth::id() == $movie->user_id){
-            $movie->delete();
+        if(\Auth::id() == $movies->user_id){
+            $movies->delete();
         }
         
         return back();
