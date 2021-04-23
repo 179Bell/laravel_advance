@@ -64,7 +64,7 @@ class User extends Authenticatable
         
         $myself = $this->id == $userId;
         
-        if( !$existing && !$myself ){
+        if( $existing && !$myself ){
             $this->followings()->detach($userId);
         }
     }
