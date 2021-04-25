@@ -40,7 +40,7 @@
                     <p>動画ID:{{ $movie->id }} URL:{{ $movie->url }} コメント:{{ $movie->comment }}</p>
                     
                     {!! Form::open(['route' => ['rest.destroy',$movie->id],'method'=>'delete' ]) !!}
-                        {!! Form::submit('この動画を削除する？',['class'=>'button btn btn-danger mb-3']) !!}
+                        {!! Form::submit('この動画を削除する？',['class'=>'button btn btn-danger mb-3'])i !!}
                     {!! Form::close() !!}
                 
                 @endforeach
