@@ -85,4 +85,16 @@ class UsersController extends Controller
         
         return view('users.followers',$data);
     }
+    
+    public function delete($id)
+    {
+        $user = User::find($id);
+        $user->delete();
+        return redirect('/');
+    }
+    
+    public function delete_confirm()
+    {
+        return view('users.delete_confirm');
+    }
 }
