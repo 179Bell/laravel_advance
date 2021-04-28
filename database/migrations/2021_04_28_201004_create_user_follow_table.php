@@ -23,13 +23,9 @@ class CreateUserFollowTable extends Migration
             $table->foreign('follow_id')->references('id')->on('users')->onDelete('cascade');
 
             $table->unique(['user_id', 'follow_id']);
+        });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('user_follow');
