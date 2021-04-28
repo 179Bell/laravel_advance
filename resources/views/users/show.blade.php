@@ -32,6 +32,6 @@
         
 @endif
 
-        <a href="{{ route('users.delete_confirm') }}">退会はこちらから</a>
+        
 
 @endsection
