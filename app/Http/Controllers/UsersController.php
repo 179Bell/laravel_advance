@@ -86,7 +86,7 @@ class UsersController extends Controller
         return view('users.followers',$data);
     }
     
-    public function delete($id)
+    public function destroy($id)
     {
         $user = User::find($id);
         $user->delete();
