@@ -13,15 +13,15 @@
       </div>
     </div>
     
-     <div>
+    <div class="btn-group">
         {!! Form::open(['route'=>['users.destroy',Auth::user()->id],'method'=>'delete']) !!}
-              {!! Form::submit('退会する',['class'=>'btn btn-danger']) !!}
-        {!! Form::close() !!}
+            {!!Form::submit('退会する',['class'=>'btn btn-danger'])!!}
+        {!!Form::close()!!}
         
-        <div class="btn btn-primary">
-            キャンセルする
+        <div class="ml-3">
+            <a href="/" class="btn btn-primary">キャンセルする</a>
         </div>
-      </div>
+    </div>
 </div>
 
 @endsection('content')
