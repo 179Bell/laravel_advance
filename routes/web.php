@@ -41,5 +41,6 @@ Route::group(['middleware'=>'auth'],function(){
         });
         
         Route::resource('movies','MoviesController',['only'=>['create','store','destroy']]);
+   
     
 });
