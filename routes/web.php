@@ -21,9 +21,7 @@ Route::post('login', 'Auth\LoginController@login')->name('login.post');
 
 Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 
-Route::resource('users','UsersController',['only'=>['show','destroy']]);
-Route::get('users','UsersController@delete_confirm')->name('users.delete_confirm');
-
+Route::resource('users','UsersController',['only'=>['show']]);
 
 Route::group(['prefix' => 'users/{id}'],function(){
     Route::get('followings','UsersController@followings') ->name('followings');
@@ -41,6 +39,7 @@ Route::group(['middleware'=>'auth'],function(){
         });
         
         Route::resource('movies','MoviesController',['only'=>['create','store','destroy']]);
-   
+        Route::resource('users','UsersController',['only'=>['destroy']]);
+        Route::get('users','UsersController@delete_confirm')->name('users.delete_confirm');
     
 });
