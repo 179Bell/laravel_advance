@@ -31,10 +31,16 @@
         </div>
         
 @endif
-
-        @if(Auth::check())
-                <a href="{{route('users.delete_confirm')}}">退会はこちらから</a>
-        @endif
+        <div>
+                @if(Auth::check())
+                        <a href="{{route('users.delete_confirm')}}">退会はこちらから</a>
+                @endif
+        </div>
         
+        <div>
+                @if(Auth::check())
+                        <a href="{{route('password.form')}}">パスワードの変更はこちらから</a>
+                @endif
+        </div>
 
 @endsection

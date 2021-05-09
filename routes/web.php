@@ -39,7 +39,10 @@ Route::group(['middleware'=>'auth'],function(){
         });
         
         Route::resource('movies','MoviesController',['only'=>['create','store','destroy']]);
+   
         Route::resource('users','UsersController',['only'=>['destroy']]);
         Route::get('users','UsersController@delete_confirm')->name('users.delete_confirm');
-    
+   
+        Route::get('/password/change','ChangePasswordController@edit')->name('password.form');
+        Route::post('/password/change','ChangePasswordController@update')->name('password.change');
 });
