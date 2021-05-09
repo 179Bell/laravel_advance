@@ -32,7 +32,9 @@
         
 @endif
 
-<a href="{{route('users.delete_confirm')}}">退会はこちらから</a>
+        @if(Auth::check())
+                <a href="{{route('users.delete_confirm')}}">退会はこちらから</a>
+        @endif
         
 
 @endsection
