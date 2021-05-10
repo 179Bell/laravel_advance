@@ -44,5 +44,5 @@ Route::group(['middleware'=>'auth'],function(){
         Route::get('users','UsersController@delete_confirm')->name('users.delete_confirm');
    
         Route::get('/password/change','ChangePasswordController@edit')->name('password.form');
-        Route::post('/password/change','ChangePasswordController@update')->name('password.change');
+        Route::put('/password/change','ChangePasswordController@update')->name('password.change');
 });

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class ChangePasswordController extends Controller
 {
@@ -11,8 +13,28 @@ class ChangePasswordController extends Controller
         return view('password.form');
     }
     
+    protected function validator(array $data)
+    {
+        return Validator::make($data,[
+            'new_password' => 'required|string|min:6|confirmed',
+            ]);
+    }
+    
     public function update(Request $request)
     {
-        dd($request);
+        $user = \Auth::user();
+        if(!password_verify($request->current_password,$user->password))
+        {
+            return redirect('/password/change')
+                ->with('warning','パスワードが違います');
+        }
+        
+        $this->validator($request->all())->validate();
+        
+        $user->password = bcrypt($request->new_password);
+        $user->save();
+        
+        return redirect ('/')
+            ->with('status','パスワードの変更が終了しました');
     }
 }
