@@ -90,7 +90,8 @@ class UsersController extends Controller
     {
         $user = User::find($id);
         $user->delete();
-        return redirect('/');
+        return redirect('/')
+            ->with('user_delete','退会処理が終了しました');
     }
     
     public function delete_confirm()

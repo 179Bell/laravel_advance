@@ -8,6 +8,19 @@
             <h1>YouTubeまとめ　× SNS</h1>
         </div>
     </div>    
+    
+    @if(session('user_delete'))
+        <div class="alert alert-info">
+            {{ session('user_delete') }}
+        </div>
+    @endif
+    
+        
+    @if(session('status'))
+        <div class="alert alert-info">
+            {{ session('status') }}
+        </div>
+    @endif
         
     <div class="text-right">
         
