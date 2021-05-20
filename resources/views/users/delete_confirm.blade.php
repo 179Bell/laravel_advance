@@ -19,7 +19,7 @@
         {!!Form::close()!!}
         
         <div class="ml-3">
-            <a href="/" class="btn btn-primary">キャンセルする</a>
+            <a href="/" class="btn btn-primary">やっぱりやめる</a>
         </div>
     </div>
 </div>
