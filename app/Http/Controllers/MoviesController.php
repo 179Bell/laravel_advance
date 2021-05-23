@@ -29,7 +29,7 @@ class MoviesController extends Controller
             'url' =>$request->url,
             'comment' => $request->comment,
             ]);
-        
+            
         return back();
     }
     

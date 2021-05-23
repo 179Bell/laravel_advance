@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\UserRequest;
 use App\User;
 
 class UsersController extends Controller
@@ -32,13 +33,8 @@ class UsersController extends Controller
         return view('users.show',$data);
     }
     
-    public function rename(Request $request)
+    public function rename(UserRequest $request)
     {
-        $this->validate($request,[
-            'channel' => 'required|max:15',
-            'name' => 'required|max:15',
-            ]);
-            
         $user=\Auth::user();
         $movies = $user->movies()->orderBy('id','desc')->paginate(9);
         

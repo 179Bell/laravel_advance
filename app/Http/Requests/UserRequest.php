@@ -13,7 +13,7 @@ class UserRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,18 @@ class UserRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'channel' => 'required|max:15',
+            'name' => 'required|max:15',
         ];
+    }
+    
+    public function messages()
+    {
+        return [
+            'channel.required' => 'チャンネル名を入力してください',
+            'name.required' => '名前を入力してください',
+            'channel.max' => '15字内で入力してください', 
+            'name.max' => '15字内で入力してください',  
+            ];
     }
 }
