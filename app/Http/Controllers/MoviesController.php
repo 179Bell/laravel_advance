@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\MovieRequest;
 use App\User;
 use App\Movie;
 
@@ -22,20 +23,14 @@ class MoviesController extends Controller
         
     }
     
-    public function store(Request $request)
+    public function store(MovieRequest $request)
     {
-        
-        $this->validate($request,[
-            'url' => 'required|max:11',
-            'comment' => 'max:36',
-            ]);
-            
         $request->user()->movies()->create([
             'url' =>$request->url,
             'comment' => $request->comment,
             ]);
             
-            return back();
+        return back();
     }
     
     public function destroy($id)

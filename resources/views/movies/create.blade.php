@@ -16,9 +16,11 @@
                  <br>例）登録したいYouTube動画のURLが<span>https://www.youtube.com/watch?v=-bNMq1Nxn5o なら</span>
                  <div>"v="の直後にある "<span class="text-success">-bNMq1Nxn5o</span>"を入力</div>
                  {!!Form::text('url',null,['class'=>'form-control'])!!}
-                 
+                    <p class="text-danger">{{ $errors->first('url') }}</p>
+                
                 {!!Form::label('comment','登録動画へのコメント',['class'=>'mt-3'])!!}
                 {!!Form::text('comment',null,['class'=>'form-control'])!!}
+                    <p class="text-danger">{{ $errors->first('comment') }}</p>
                 
                 {!!Form::submit('新規投稿する?',['class'=>'button btn btn-primary mt-5 mb-5'])!!}
                 

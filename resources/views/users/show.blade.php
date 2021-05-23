@@ -19,6 +19,7 @@
                                         {!! Form::text('channel',$user->channel,['class'=>'form-control']) !!}
                                 </div>
                                 
+                                
                                 <div class="form-group">
                                         {!! Form::label('name','名前') !!}
                                         {!! Form::text('name',$user->name,['class'=>'form-control']) !!}

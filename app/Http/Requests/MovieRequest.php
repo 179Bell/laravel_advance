@@ -13,7 +13,7 @@ class MovieRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,16 @@ class MovieRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'url' => 'required|max:11',
+            'comment' => 'max:36'
         ];
+    }
+    
+    public function messages()
+    {
+        return [
+            'url.required' => 'URLを入力してください',
+            'comment.max' => 'コメントは36字以内で入力してください'
+            ];
     }
 }
