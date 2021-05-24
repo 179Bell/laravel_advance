@@ -32,8 +32,16 @@ class MovieRequest extends FormRequest
     public function messages()
     {
         return [
-            'url.required' => 'URLを入力してください',
-            'comment.max' => 'コメントは36字以内で入力してください'
+            'url.required' => ':attributeを入力してください',
+            'comment.max' => ':max字以内で入力してください'
+            ];
+    }
+    
+    public function attributes()
+    {
+        return [
+            'url' => 'URL',
+            'comment' => 'コメント',
             ];
     }
 }
