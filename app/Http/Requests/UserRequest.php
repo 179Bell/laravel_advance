@@ -32,10 +32,18 @@ class UserRequest extends FormRequest
     public function messages()
     {
         return [
-            'channel.required' => 'チャンネル名を入力してください',
-            'name.required' => '名前を入力してください',
-            'channel.max' => '15字内で入力してください', 
-            'name.max' => '15字内で入力してください',  
+            'channel.required' => ':attributeを入力してください',
+            'name.required' => ':attributeを入力してください',
+            'channel.max' => ':max字以内で入力してください', 
+            'name.max' => ':max字以内で入力してください',  
+            ];
+    }
+    
+    public function attributes()
+    {
+        return [
+            'channel' => 'チャンネル名',
+            'name' => '名前',
             ];
     }
 }

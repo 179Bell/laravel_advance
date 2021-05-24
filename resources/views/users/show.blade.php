@@ -18,12 +18,13 @@
                                         {!! Form::label('channel','チャンネル名') !!}
                                         {!! Form::text('channel',$user->channel,['class'=>'form-control']) !!}
                                 </div>
-                                
+                                <p class="text-danger">{{ $errors->first('channel') }}</p>
                                 
                                 <div class="form-group">
                                         {!! Form::label('name','名前') !!}
                                         {!! Form::text('name',$user->name,['class'=>'form-control']) !!}
                                 </div>
+                                <p class="text-danger">{{ $errors->first('name') }}</p>
                                 
                                 {!! Form::submit('更新する？',['class'=>'button btn btn-primary mt-2']) !!}
                         {!! Form::close() !!}
