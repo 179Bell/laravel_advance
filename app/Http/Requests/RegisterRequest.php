@@ -29,4 +29,13 @@ class RegisterRequest extends FormRequest
             'password' => 'required|string|min:6|confirmed',
         ];
     }
+    
+    public function messages()
+    {
+        return [
+        'name' => '名前',
+        'email' => 'メールアドレス',
+        'password' => 'パスワード',
+        ];
+    }
 }
