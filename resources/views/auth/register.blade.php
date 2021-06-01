@@ -19,16 +19,19 @@
                 <div class="form-group">
                     {!! Form::label('name','名前')!!}
                     {!! Form::text('name',old('name'),['class' => 'form-control'])!!}
+                    <p>{{ $errors->first('name') }}</p>
                 </div>
                 
                 <div class="form-group">
                     {!! Form::label('email','メールアドレス')!!}
                     {!! Form::email('email',old('email'),['class' => 'form-control'])!!}
+                    <p>{{ $errors->first('email') }}</p>
                 </div>
                 
                 <div class="form-group">
                     {!! Form::label('password','パスワード')!!}
                     {!! Form::password('password',['class' => 'form-control'])!!}
+                    <p>{{ $errors->first('password') }}</p>
                 </div>
                 
                 <div class="form-group">
